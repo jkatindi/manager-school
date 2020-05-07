@@ -11,9 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+@JsonIdentityInfo(
+  generator=ObjectIdGenerators.PropertyGenerator.class,
+  property="id")
 @Entity
 @Table(name = "cours")
 public class Cours {
@@ -25,7 +27,6 @@ public class Cours {
 	private int credit;
 
 	@OneToMany(mappedBy ="cours",cascade = CascadeType.ALL)
-    @JsonManagedReference
 	private List<CoursSession> nosSessions=new ArrayList<>();
 	
 	public Cours(String code, String intitule, int credit) {
