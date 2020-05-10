@@ -30,9 +30,9 @@ public class ServiceCoursImpl implements ServiceCours {
 	}
 
 	@Override
-	public void mettreAjour(Cours c, Long id) {
+	public void mettreAjour(Cours c) {
 		// TODO Auto-generated method stub
-
+        repository.updateCours(c.getId(),c.getCode(),c.getIntitule(),c.getCredit());
 	}
 
 	@Override

@@ -8,7 +8,7 @@ public interface ServiceCours {
 	Cours ajouterCours(Cours cours);
 	List<Cours> getAllCours();
 	Cours coursParId(Long id);
-	void mettreAjour(Cours c,Long id);
+	void mettreAjour(Cours c);
 	void supprimerCours(Long id);
 	
 
